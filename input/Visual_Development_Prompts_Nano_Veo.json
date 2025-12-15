@@ -1,0 +1,365 @@
+{
+  "project": "信与账 (The Letter and The Ledger)",
+  "core_style": {
+    "universal_style_block": {
+      "art_style": "Gritty 'Motion Comic' aesthetic mixed with Rough Charcoal Illustration.",
+      "line_quality": "Thick, jagged, uneven charcoal outlines.",
+      "texture": "Heavy dirt overlay, visible paper grain, smudged charcoal shading.",
+      "lighting": "High contrast 'Film Noir' chiaroscuro, heavy use of pitch-black silhouettes and rim lighting.",
+      "colors": "Desaturated Iron Grey (#2F353B), Muddy Brown, Frozen Blue (#3A4A5A), with piercing Crimson Red (#8A1C1C) for focal points.",
+      "atmosphere": "Oppressive, historical 1937 Winter.",
+      "layout": "Concept Art Sheet with Chinese text annotations."
+    },
+    "video_style_block": {
+      "visual_style": "Gritty Motion Comic, Thick Ink outlines, Charcoal texture.",
+      "animation_logic": "12fps Limited Animation look, Boiling Line effect (shimmering outlines), Heavy weighted movement.",
+      "cinematography": "Handheld camera simulation, Macro focus, Tactile physics (fluid/cloth).",
+      "atmosphere": "1937 Winter, Gloomy, High Contrast."
+    }
+  },
+  "character_references": {
+    "murata": "Japanese soldier. Often shown as 'hands with white gloves' (clean/detached) or 'ominous silhouette' (helmet, bayonet). Represents the 'Lie'.",
+    "liu_decai": "Leader of the Burial Team. Middle-aged Chinese man. Face covered in heavy soot/grease/ash. Wears a worn, padded cotton jacket. Hands are rough, frostbitten, cracked. Represents the 'Truth'."
+  },
+  "scenes": [
+    {
+      "scene_id": "1",
+      "scene_title": "The Hot Tea in Winter vs. The Clogged River",
+      "timestamp": "0:00 - 0:45",
+      "shots": [
+        {
+          "shot_id": "0:10",
+          "description": "ECU - Hand/Porcelain",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Extreme Close-up (ECU), macro focus. A rough, weathered male hand ([Ref: Murata]) with dirty fingernails gently holds a delicate, pristine Chinese Famille Rose porcelain tea bowl (粉彩瓷盖碗) with the lid closed. Dark minimalist background. High contrast 'Film Noir' lighting highlights the glossy, smooth glaze of the porcelain against the rough, textured skin of the hand. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Extreme Close-up (ECU). The rough hand lifts the porcelain lid slightly. A wisp of hot white steam escapes from the gap, drawn with jagged 'boiling line' charcoal strokes, contrasting with the static porcelain. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Extreme Close-up (ECU). The lid is fully removed. Thick, swirling white steam fills the frame, blurring the edges of the porcelain and the hand, creating a transition to white. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "The rough hand slowly and elegantly lifts the porcelain tea bowl lid. Hot steam rises with a jittery, 12fps hand-drawn animation effect (Boiling Line). The steam gradually thickens and obscures the camera lens, creating a whiteout transition. [Video Style Block]"
+        },
+        {
+          "shot_id": "0:20",
+          "description": "Match Cut - Texture Transition",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "High Contrast Black & White woodcut style. Extreme Close-up (ECU) of a frostbitten hand ([Ref: Liu Decai]) tightly gripping a rusty, cold iron hook handle. The skin is purple-bruised, cracked, and covered in soot. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Extreme Close-up (ECU). The hand muscles tense up visibly, veins popping out. The surrounding air is filled with a heavy, grey miasma (represented by static noise texture and charcoal smudges). [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Action frame. The iron hook is thrust downwards violently into the darkness. Motion blur on the arm. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "The frostbitten hand grips the iron hook tighter, muscles trembling with tension (12fps vibration). Grey mist swirls slowly and ominously in the background. The hand suddenly and violently thrusts the hook downward. [Video Style Block]"
+        },
+        {
+          "shot_id": "0:30",
+          "description": "Macro Focus - Tactile",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Macro shot of the Yangtze River surface. The water looks like thick, viscous black asphalt or crude oil, not water. High reflection, heavy texture. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Macro shot. A dirty, waterlogged collar of a headless corpse is hooked by a rusty iron hook and slowly pulled above the black, oily surface. Viscous liquid drips from it. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Macro focus on the severed neck wound. Sharp, jagged red-black ice crystals (红黑色冰碴) have formed at the wound, glistening like dangerous gems against the dead flesh. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "The thick, oily black water parts slowly as the hook pulls. The corpse rises with heavy, sluggish physics. The sharp ice crystals at the neck shimmer with a 'boiling line' effect, glistening menacingly. [Video Style Block]"
+        },
+        {
+          "shot_id": "0:40",
+          "description": "Extreme Wide Shot - Static Oppression",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Extreme Wide Shot, top-down aerial view. The entire river bay is completely clogged with thousands of corpses, forming a repetitive, organic cellular pattern (like cells under a microscope). Muted, desaturated colors. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Extreme Wide Shot. Same composition. Tiny, almost invisible black silhouette figures (the burial team) are visible on the periphery, contrasting with the massive scale of death. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Extreme Wide Shot. Same composition. Subtle 'boiling line' vibration on the edges of the corpse mass, suggesting the flow of water trying to push through. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "The scene is mostly static and oppressive. Only the edges of the corpse mass vibrate slightly (shimmering outlines/Boiling Line effect). Tiny silhouette figures move very slowly in a stop-motion style on the banks. [Video Style Block]"
+        }
+      ]
+    },
+    {
+      "scene_id": "3",
+      "scene_title": "The Snow of Home vs. Broken Families",
+      "timestamp": "2:00 - 3:30",
+      "shots": [
+        {
+          "shot_id": "2:00",
+          "description": "Material Transition - Black Snow",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Close-up. A rough, weathered hand holds a clean white piece of paper. The background is a blurred, dark winter scene. Black, flakey ash (not snow) is falling gently from the sky. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Close-up. A single large flake of black ash lands on the pristine white paper. The texture of the ash is visible - porous and burnt. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Close-up. The ash flake dissolves instantly upon contact, turning into a pool of thick black ink that spreads outwards with jagged, irregular edges (Ink Bleed effect), staining the white paper like a disease. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "Black ash falls slowly with a floating particle physics simulation. As a flake hits the paper, it instantly liquefies and spreads into a dark stain with jagged, animated edges (ink bleed animation). [Video Style Block]"
+        },
+        {
+          "shot_id": "2:20",
+          "description": "ECU - Facial Texture",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Extreme Close-up (ECU) of Liu Decai's ([Ref: Liu Decai]) face. The skin texture is incredibly detailed and heavy, covered in a thick layer of oily grey soot and grime. Pores are clogged. The lighting emphasizes the greasy sheen. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Extreme Close-up (ECU). His rough hand wipes heavily across his cheek, smearing the soot. The motion is slow and exhausted. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Extreme Close-up (ECU). A clean(er) black streak is left behind on the soot-covered skin where the hand wiped, revealing raw, red, irritated skin underneath. The contrast between the soot and the raw skin is visceral. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "The hand wipes across the face with heavy friction. The soot smears realistically, leaving a trail. The entire image vibrates slightly to simulate a suppressed cough or deep pain. [Video Style Block]"
+        },
+        {
+          "shot_id": "2:40",
+          "description": "Static Composition - Evidence",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Macro shot of a woven reed mat (芦席). The texture is rough, with broken strands and splinters. Dark, dried blood scabs are visible caught in the weave. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "The reed mat is lifted slightly at the corner. Underneath, a patch of faded red floral cotton fabric (typical of 1930s Chinese rural clothing) is revealed. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Focus shifts to a clumsy, hand-sewn patch on the red floral fabric. The thread is coarse. It implies a mother's care for a child, now lost. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "Very subtle, slow movement. The mat is lifted gently. Dust motes dance in the shaft of light. The focus racks slowly from the rough reed texture to the soft, sad floral fabric underneath. [Video Style Block]"
+        },
+        {
+          "shot_id": "3:10",
+          "description": "Impact Frame - Collapse",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Close-up of a hand holding a fountain pen/brush, trembling violently (motion blur). The knuckles are white with tension. The background is dark. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "High contrast flash frame (Impact Frame). The pen tip snaps or hits the paper with extreme force. The image is inverted (negative) for a split second to show impact intensity. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Abstract horror. Black ink explodes outwards from the impact point, but not as liquid. It forms thousands of sharp, jagged black spikes (like sea urchin spines or shattered glass) filling the screen aggressively. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "The hand shakes violently (high frequency vibration). The impact is instant and jarring. The ink explosion is sudden, radiating outwards as sharp, rigid spikes rather than liquid, creating a 'glitch' or 'psychotic break' effect. [Video Style Block]"
+        }
+      ]
+    },
+    {
+      "scene_id": "4",
+      "scene_title": "The Frenzy & The Looting",
+      "timestamp": "3:30 - 4:25",
+      "shots": [
+        {
+          "shot_id": "3:30",
+          "description": "Split Screen - Calculation",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Split screen composition, divided by a rough, jagged black line. Left Side: A close-up of a ledger book filled with black handwritten numbers. Right Side: A hand holding a wooden stamp, hovering. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Split screen. Left Side: The numbers on the ledger seem to be multiplying and crawling like black insects. Right Side: The stamp moves closer to the paper. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Split screen. Tension peak. The stamp is about to strike. The jagged dividing line appears to be vibrating or tearing. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "Left side: Numbers animate at 12fps, crawling and jittering like bugs. Right side: The hand moves with a smoother, heavier 24fps motion. The jagged dividing line vibrates with the audio tension. [Video Style Block]"
+        },
+        {
+          "shot_id": "3:40",
+          "description": "Synchronized Impact",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Split screen. The moment of impact. Left: The ledger snaps shut. Right: The stamp hits the paper. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Impact aftermath. Left: Dust and grey particles fly up from the closing book. Right: Impact ripple lines radiate from the stamp. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Single frame composition. A bright Red stamp mark 'Nanking Fall Commemoration' (南京陷落纪念) is stamped firmly in the center, overlaying the previous split screen. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "Simultaneous heavy impact on both sides. The screen shakes violently (camera shake). Dust particles fly up. The red stamp appears instantly with a 'thud' visual weight. [Video Style Block]"
+        },
+        {
+          "shot_id": "3:50",
+          "description": "Double Exposure Loop - Madness",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Double Exposure portrait. Base layer: Liu Decai's ([Ref: Liu Decai]) face, staring forward with a hollow, traumatized expression. Texture is gritty. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Double Exposure. Overlay layer: High contrast, grainy black and white silhouettes of Japanese soldiers cheering 'Banzai' with arms raised. The silhouettes are superimposed inside Liu's head/face area. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Double Exposure. The soldiers' silhouettes blend into the texture of Liu Decai's skin, looking like moving tattoos or shadows. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "Liu Decai's face remains static and unmoving. The overlay of cheering soldiers loops rapidly like a noisy, damaged film projection inside his silhouette, creating a chaotic mental noise effect. [Video Style Block]"
+        },
+        {
+          "shot_id": "4:05",
+          "description": "Selective Focus - Greed",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Extreme Close-up. A dirty, callous thumb ([Ref: Murata]) rubbing the surface of a Mahjong tile (The 'One of Bamboo' / Bird tile). [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Macro focus on the Mahjong tile. The carved grooves of the bird pattern are filled not with paint, but with dried, rusty black blood (crusty texture). [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Extreme Close-up. The background blurs completely into vague, fleshy colors (implying a corpse), while the focus remains sharp on the blood-filled Mahjong tile. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "The thumb rubs the tile obsessively in a loop (rubbing a trophy). Focus racks slightly to reveal the gritty, crusty texture of the dried blood inside the carved grooves. [Video Style Block]"
+        }
+      ]
+    },
+    {
+      "scene_id": "5",
+      "scene_title": "The Judgment & The Unsettled",
+      "timestamp": "4:25 - 5:35",
+      "shots": [
+        {
+          "shot_id": "4:35",
+          "description": "Visual Montage - Testimony",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Top-down view. A close-up of handwritten investigation log paper (historical document style). The paper is yellowed and brittle. Text written in black ink: 'Clothes stripped' (衣服脱光), 'Burned alive' (烧死). [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Top-down view. The edges of the handwritten characters start to lose their shape and liquefy. The ink becomes wet and glossy again, as if freshly written with blood. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Top-down view. The text bleeds dark red/black liquid, running down the paper like tears or fresh wounds. The paper texture absorbs the liquid. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "The dry ink of the handwritten text suddenly becomes fluid and starts dripping downwards (viscous fluid simulation), leaving dark red trails on the yellowed paper. [Video Style Block]"
+        },
+        {
+          "shot_id": "4:50",
+          "description": "Stop-motion Accumulation - Ledger Mountain",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Wide shot. A single heavy, black ledger book slams down onto a flat surface. Dust flies up upon impact. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Wide shot. Multiple ledger books are falling from the sky (blurred motion), stacking up rapidly in a chaotic pile. The pile is growing higher. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Wide shot. The massive pile of black ledgers forms a jagged, imposing silhouette against a dark sky, resembling the shape of Purple Mountain (Nanjing's landmark). [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "Stop-motion animation style (12fps). Heavy ledger books slam down one by one from above, stacking up rapidly to form a mountain shape. Each impact causes a slight, heavy camera shake. [Video Style Block]"
+        },
+        {
+          "shot_id": "5:00",
+          "description": "The Scroll of Doom - Infinite Texture",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Texture shot. Infinite, seamless background of yellowed, rough ledger paper with fine grid lines extending into the darkness. No text yet. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Texture shot. White text (lists of massacres and death tolls) begins scrolling rapidly upwards. Motion blur indicates high speed. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Texture shot. The speed of the scrolling text is so fast that the paper texture appears to be ripping or tearing at the edges from the friction. Visual noise. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "The background paper texture scrolls downwards (creating the illusion of text moving up). Text streams up at an exponentially increasing speed, becoming a blur of white lines against the yellow paper. [Video Style Block]"
+        }
+      ]
+    },
+    {
+      "scene_id": "Final",
+      "scene_title": "The Ultimate Interrogation",
+      "timestamp": "5:35 - 6:00",
+      "shots": [
+        {
+          "shot_id": "5:35",
+          "description": "The Gaze - Bleeding Text",
+          "nano_banana_pro_prompts": [
+            {
+              "frame": "start",
+              "prompt": "Pitch black background. Sharp, high-contrast Crimson Red text centered on screen: 'Question 1' (or specific Japanese/Chinese text). The font is serif, authoritative. [Universal Style Block]"
+            },
+            {
+              "frame": "middle",
+              "prompt": "Pitch black background. The bottom edges of the red letters begin to elongate and drip, losing their structural integrity. [Universal Style Block]"
+            },
+            {
+              "frame": "end",
+              "prompt": "Pitch black background. Thick blood drips freely from the text, pooling at the bottom of the frame. The text looks like bleeding wounds. [Universal Style Block]"
+            }
+          ],
+          "veo_3_1_prompt": "The text appears sharply in the center. Then, thick, heavy blood slowly oozes and drips from the tips of the strokes, defying gravity or flowing naturally down. [Video Style Block]"
+        }
+      ]
+    }
+  ]
+}
