@@ -9,6 +9,7 @@ function App() {
   const [projectData, setProjectData] = useState<ProjectData | null>(null);
   const [loading, setLoading] = useState(false);
   const [generatingTasks, setGeneratingTasks] = useState<Record<string, string>>({}); // taskId -> status
+  const [generatedFiles, setGeneratedFiles] = useState<Record<string, string>>({}); // taskId -> fileUrl
 
   const handleUpload = async (file: File) => {
     setLoading(true);
@@ -30,7 +31,7 @@ function App() {
     setGeneratingTasks(prev => ({ ...prev, [taskId]: 'generating' }));
 
     try {
-      await generateImage({
+      const result = await generateImage({
         project_name: projectData.project,
         scene_id: sceneId,
         shot_id: shotId,
@@ -38,6 +39,9 @@ function App() {
         frame_type: type
       });
       setGeneratingTasks(prev => ({ ...prev, [taskId]: 'completed' }));
+      if (result.file_url) {
+        setGeneratedFiles(prev => ({ ...prev, [taskId]: result.file_url }));
+      }
     } catch (error) {
       console.error('Generation failed:', error);
       setGeneratingTasks(prev => ({ ...prev, [taskId]: 'failed' }));
@@ -51,13 +55,16 @@ function App() {
     setGeneratingTasks(prev => ({ ...prev, [taskId]: 'generating' }));
 
     try {
-      await generateVideo({
+      const result = await generateVideo({
         project_name: projectData.project,
         scene_id: sceneId,
         shot_id: shotId,
         prompt: prompt,
       });
       setGeneratingTasks(prev => ({ ...prev, [taskId]: 'completed' }));
+      if (result.file_url) {
+        setGeneratedFiles(prev => ({ ...prev, [taskId]: result.file_url }));
+      }
     } catch (error) {
       console.error('Video Generation failed:', error);
       setGeneratingTasks(prev => ({ ...prev, [taskId]: 'failed' }));
@@ -107,6 +114,7 @@ function App() {
                 onGenerateImage={handleGenerateImage}
                 onGenerateVideo={handleGenerateVideo}
                 generatingTasks={generatingTasks}
+                generatedFiles={generatedFiles}
              />
           </div>
         )}

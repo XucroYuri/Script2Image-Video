@@ -7,11 +7,13 @@ interface SceneListProps {
     onGenerateImage: (sceneId: string, shotId: string, type: string, prompt: string) => void;
     onGenerateVideo: (sceneId: string, shotId: string, prompt: string) => void;
     generatingTasks: Record<string, string>; // key: taskId (e.g. "sceneId-shotId-type"), value: status
+    generatedFiles: Record<string, string>; // key: taskId, value: fileUrl
 }
 
-const SceneList: React.FC<SceneListProps> = ({ scenes, onGenerateImage, onGenerateVideo, generatingTasks }) => {
+const SceneList: React.FC<SceneListProps> = ({ scenes, onGenerateImage, onGenerateVideo, generatingTasks, generatedFiles }) => {
     
     const getTaskStatus = (id: string) => generatingTasks[id];
+    const getFileUrl = (id: string) => generatedFiles[id];
 
     return (
         <div className="space-y-8">
@@ -38,6 +40,7 @@ const SceneList: React.FC<SceneListProps> = ({ scenes, onGenerateImage, onGenera
                                 onGenerateImage={onGenerateImage}
                                 onGenerateVideo={onGenerateVideo}
                                 getStatus={getTaskStatus}
+                                getFileUrl={getFileUrl}
                             />
                         ))}
                     </div>
@@ -53,9 +56,10 @@ interface ShotItemProps {
     onGenerateImage: (sceneId: string, shotId: string, type: string, prompt: string) => void;
     onGenerateVideo: (sceneId: string, shotId: string, prompt: string) => void;
     getStatus: (id: string) => string | undefined;
+    getFileUrl: (id: string) => string | undefined;
 }
 
-const ShotItem: React.FC<ShotItemProps> = ({ shot, sceneId, onGenerateImage, onGenerateVideo, getStatus }) => {
+const ShotItem: React.FC<ShotItemProps> = ({ shot, sceneId, onGenerateImage, onGenerateVideo, getStatus, getFileUrl }) => {
     return (
         <div className="p-4 hover:bg-gray-800/30 transition-colors">
             <div className="flex items-start justify-between mb-3">
@@ -86,18 +90,30 @@ const ShotItem: React.FC<ShotItemProps> = ({ shot, sceneId, onGenerateImage, onG
                                 if (!prompt) return null;
                                 const taskId = `${sceneId}-${shot.shot_id}-${frame}`;
                                 const status = getStatus(taskId);
+                                const fileUrl = getFileUrl(taskId);
 
                                 return (
-                                    <div key={frame} className="flex items-center justify-between gap-3 bg-gray-900 p-2 rounded border border-gray-800/50">
-                                        <div className="flex flex-col min-w-0 flex-1">
-                                            <span className="text-xs font-bold text-gray-500 uppercase">{frame}</span>
-                                            <p className="text-xs text-gray-400 truncate" title={prompt}>{prompt}</p>
+                                    <div key={frame} className="space-y-2 bg-gray-900 p-2 rounded border border-gray-800/50">
+                                        <div className="flex items-center justify-between gap-3">
+                                            <div className="flex flex-col min-w-0 flex-1">
+                                                <span className="text-xs font-bold text-gray-500 uppercase">{frame}</span>
+                                                <p className="text-xs text-gray-400 truncate" title={prompt}>{prompt}</p>
+                                            </div>
+                                            <ActionButton 
+                                                status={status} 
+                                                onClick={() => onGenerateImage(sceneId, shot.shot_id, frame, prompt)}
+                                                label="Gen"
+                                            />
                                         </div>
-                                        <ActionButton 
-                                            status={status} 
-                                            onClick={() => onGenerateImage(sceneId, shot.shot_id, frame, prompt)}
-                                            label="Gen"
-                                        />
+                                        {fileUrl && (
+                                            <div className="relative aspect-video rounded overflow-hidden bg-black/50 border border-gray-800">
+                                                <img 
+                                                    src={`http://localhost:8000${fileUrl}`} 
+                                                    alt={`${frame} frame`}
+                                                    className="w-full h-full object-contain"
+                                                />
+                                            </div>
+                                        )}
                                     </div>
                                 );
                             })}
@@ -117,6 +133,15 @@ const ShotItem: React.FC<ShotItemProps> = ({ shot, sceneId, onGenerateImage, onG
                                 {shot.veo_3_1_prompt}
                             </p>
                         </div>
+                        {getFileUrl(`${sceneId}-${shot.shot_id}-video`) && (
+                             <div className="mb-3 relative aspect-video rounded overflow-hidden bg-black/50 border border-gray-800">
+                                <video 
+                                    src={`http://localhost:8000${getFileUrl(`${sceneId}-${shot.shot_id}-video`)}`} 
+                                    controls
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
+                        )}
                         <div className="flex justify-end">
                             <ActionButton 
                                 status={getStatus(`${sceneId}-${shot.shot_id}-video`)} 

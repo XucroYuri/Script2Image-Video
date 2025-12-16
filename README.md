@@ -1,91 +1,93 @@
-# AI图像视频生成应用
+# AI Image & Video Generator
 
-一个基于React前端和Python后端的AI图像视频生成应用，通过解析JSON配置文件，自动生成高质量的图像和视频内容。
+[English](README.md) | [日本語](README_ja.md) | [中文](README_zh.md)
 
-## 🌟 项目特色
+An AI-powered image and video generation application based on React frontend and Python backend. It automatically generates high-quality visual content by parsing JSON configuration files.
 
-- **🤖 AI驱动**: 集成Google Gemini和Veo API，生成高质量视觉内容
-- **📋 配置化**: 通过JSON配置文件定义生成规则，灵活可控
-- **🎨 智能处理**: 自动处理提示词，支持样式模板和引用替换
-- **⚡ 高效生成**: 支持批量处理，并行生成多个场景内容
-- **💻 跨平台**: 支持Windows、macOS、Linux多平台部署
-- **🌐 现代化**: 采用React + FastAPI技术栈，界面友好
+## 🌟 Features
 
-## 🚀 快速开始
+- **🤖 AI-Powered**: Integrated with Google Gemini and Veo APIs for high-quality content generation.
+- **📋 Configurable**: Define generation rules via JSON configuration files, flexible and controllable.
+- **🎨 Intelligent Processing**: Automatically processes prompts, supporting style templates and reference replacement.
+- **⚡ Efficient**: Supports batch processing and parallel generation of multiple scenes.
+- **💻 Cross-Platform**: Supports Windows, macOS, and Linux deployment.
+- **🌐 Modern**: Built with React + FastAPI technology stack, offering a user-friendly interface.
 
-### 环境要求
+## 🚀 Quick Start
+
+### Requirements
 
 - **Node.js**: ≥ 16.0.0
 - **Python**: ≥ 3.9.0
-- **操作系统**: Windows 10+/macOS 10.15+/Ubuntu 20.04+
+- **OS**: Windows 10+/macOS 10.15+/Ubuntu 20.04+
 
-### 安装步骤
+### Installation
 
-1. **克隆项目**
+1. **Clone the repository**
 ```bash
-git clone https://github.com/your-username/ai-image-video-generator.git
+git clone https://github.com/XucroYuri/Script2Image-Video.git
 cd ai-image-video-generator
 ```
 
-2. **安装后端依赖**
+2. **Install Backend Dependencies**
 ```bash
 cd backend
 pip install -r requirements.txt
 ```
 
-3. **安装前端依赖**
+3. **Install Frontend Dependencies**
 ```bash
 cd ../frontend
 npm install
 ```
 
-4. **配置API密钥**
+4. **Configure API Keys**
 ```bash
-# 复制环境变量模板
+# Copy env template
 cp .env.example .env
 
-# 编辑.env文件，填入你的API密钥
+# Edit .env and add your API keys
 GEMINI_API_KEY=your_gemini_api_key_here
 VEO_API_KEY=your_veo_api_key_here
 ```
 
-5. **启动服务**
+5. **Start Services**
 ```bash
-# 启动后端服务（在backend目录）
+# Start Backend (in backend directory)
 uvicorn main:app --reload --port 8000
 
-# 启动前端服务（在frontend目录）
+# Start Frontend (in frontend directory)
 npm run dev
 ```
 
-6. **访问应用**
-打开浏览器访问 `http://localhost:5173`
+6. **Access Application**
+Open browser and visit `http://localhost:5173`
 
-## 📖 使用说明
+## 📖 Usage Guide
 
-### 1. 准备配置文件
+### 1. Prepare Configuration
 
-创建JSON配置文件，格式如下：
+Create a JSON configuration file like this:
 
 ```json
 {
   "project_id": "project-001",
-  "project_name": "我的第一个AI项目",
+  "project_name": "My First AI Project",
   "scenes": [
     {
       "scene_id": "scene-001",
-      "name": "开场场景",
+      "name": "Opening Scene",
       "shots": [
         {
           "shot_id": "shot-001",
-          "name": "远景镜头",
+          "name": "Wide Shot",
           "order_index": 1,
           "nano_banana_pro_prompts": {
-            "start": "一个美丽的日出场景，[universal_style_block]",
-            "middle": "太阳缓缓升起，天空呈现渐变色",
-            "end": "阳光洒向大地，万物复苏"
+            "start": "A beautiful sunrise scene, [universal_style_block]",
+            "middle": "The sun rises slowly, sky turns gradient",
+            "end": "Sunlight hits the ground, everything comes to life"
           },
-          "veo_3_1_prompt": "日出时分的自然风光，柔和的光线变化"
+          "veo_3_1_prompt": "Natural scenery at sunrise, soft light changes"
         }
       ]
     }
@@ -93,181 +95,195 @@ npm run dev
 }
 ```
 
-### 2. 上传配置文件
+### 2. Upload Configuration
 
-- 在主页拖拽JSON文件到上传区域
-- 或点击上传按钮选择文件
-- 系统会自动解析并显示项目预览
+- Drag and drop JSON file to the upload area on the homepage.
+- Or click the upload button to select a file.
+- The system will automatically parse and display the project preview.
 
-### 3. 配置生成参数
+### 3. Configure Parameters
 
-- 设置图像生成参数（可选）
-- 设置视频生成参数（可选）
-- 预览生成效果
+- Set image generation parameters (optional).
+- Set video generation parameters (optional).
+- Preview generation effects.
 
-### 4. 开始生成
+### 4. Start Generation
 
-- 点击"开始生成"按钮
-- 实时查看生成进度
-- 监控详细的生成日志
+- Click the "Start Generation" button.
+- View generation progress in real-time.
+- Monitor detailed generation logs.
 
-### 5. 下载结果
+### 5. Download Results
 
-- 生成完成后查看结果
-- 支持批量下载所有内容
-- 可选择性下载特定文件
+- View results after generation is complete.
+- Support batch download of all content.
+- Selectively download specific files.
 
-## 🏗️ 项目结构
+## 🏗️ Project Structure
 
 ```
 App/
-├── frontend/                    # React前端项目
+├── frontend/                    # React Frontend
 │   ├── src/
-│   │   ├── components/         # UI组件
-│   │   ├── pages/             # 页面组件
-│   │   ├── services/          # API服务
-│   │   ├── utils/             # 工具函数
-│   │   └── types/             # TypeScript类型定义
+│   │   ├── components/         # UI Components
+│   │   ├── pages/             # Page Components
+│   │   ├── services/          # API Services
+│   │   ├── utils/             # Utilities
+│   │   └── types/             # TypeScript Types
 │   ├── public/
 │   └── package.json
-├── backend/                     # Python后端项目
+├── backend/                     # Python Backend
 │   ├── app/
-│   │   ├── api/               # API路由
-│   │   ├── core/              # 核心配置
-│   │   ├── models/            # 数据模型
-│   │   ├── services/          # 业务逻辑
-│   │   └── utils/             # 工具函数
+│   │   ├── api/               # API Routes
+│   │   ├── core/              # Core Config
+│   │   ├── models/            # Data Models
+│   │   ├── services/          # Business Logic
+│   │   └── utils/             # Utilities
 │   ├── requirements.txt
 │   └── main.py
-├── input/                       # 输入文件目录
-├── output/                      # 输出文件目录
-├── logs/                        # 日志文件目录
-├── docs/                        # 项目文档
-└── scripts/                     # 部署脚本
+├── input/                       # Input Directory
+├── output/                      # Output Directory
+├── logs/                        # Logs Directory
+├── docs/                        # Documentation
+└── scripts/                     # Deployment Scripts
 ```
 
-## 🔧 配置说明
+## 🔧 Configuration
 
-### 环境变量
+### Environment Variables
 
-| 变量名 | 说明 | 默认值 |
+| Variable | Description | Default |
 |--------|------|--------|
-| `GEMINI_API_KEY` | Google Gemini API密钥 | 必填 |
-| `VEO_API_KEY` | Google Veo API密钥 | 必填 |
-| `MAX_CONCURRENT_TASKS` | 最大并发任务数 | 5 |
-| `MAX_FILE_SIZE` | 最大文件大小(MB) | 500 |
-| `OUTPUT_DIR` | 输出目录路径 | ./output |
-| `LOG_LEVEL` | 日志级别 | INFO |
+| `GEMINI_API_KEY` | Google Gemini API Key | Required |
+| `VEO_API_KEY` | Google Veo API Key | Required |
+| `MAX_CONCURRENT_TASKS` | Max concurrent tasks | 5 |
+| `MAX_FILE_SIZE` | Max file size (MB) | 500 |
+| `OUTPUT_DIR` | Output directory path | ./output |
+| `LOG_LEVEL` | Log level | INFO |
 
-### 配置文件示例
+### Config Example
 
 `.env`:
 ```bash
-# API配置
+# API Config
 GEMINI_API_KEY=your_gemini_api_key_here
 VEO_API_KEY=your_veo_api_key_here
 
-# 系统配置
+# System Config
 MAX_CONCURRENT_TASKS=10
 MAX_FILE_SIZE=500
 OUTPUT_DIR=./output
 LOG_LEVEL=INFO
 
-# 高级配置
+# Advanced Config
 GEMINI_MODEL=models/gemini-3-pro-image-preview
 VEO_MODEL=models/veo-2.0-generate-001
 DEFAULT_IMAGE_QUALITY=high
 DEFAULT_VIDEO_DURATION=5
 ```
 
-## 🎯 核心功能
+## 🎯 Core Functions
 
-### 图像生成
-- 支持start/middle/end三帧图像生成
-- 自动处理提示词中的占位符
-- 支持引用替换功能
-- 高质量图像输出
+### Image Generation
+- Supports start/middle/end frame generation.
+- Automatically processes placeholders in prompts.
+- Supports reference replacement.
+- High-quality image output.
 
-### 视频生成
-- 基于图像序列生成视频
-- 支持纯文本生成视频
-- 可调节视频参数（时长、分辨率等）
-- 多种输出格式支持
+### Video Generation
+- Generates video based on image sequences.
+- Supports text-to-video generation.
+- Adjustable video parameters (duration, resolution, etc.).
+- Multiple output format support.
 
-### 智能处理
-- JSON文件自动解析
-- 提示词预处理
-- 批量任务管理
-- 错误重试机制
+### Intelligent Processing
+- Automatic JSON parsing.
+- Prompt preprocessing.
+- Batch task management.
+- Error retry mechanism.
 
-### 用户界面
-- 拖拽上传文件
-- 实时进度显示
-- 可视化参数配置
-- 响应式设计
+### User Interface
+- Drag-and-drop file upload.
+- Real-time progress display.
+- Visual parameter configuration.
+- Responsive design.
 
-## 📊 开发进度
+## 📊 Roadmap
 
-- ✅ 项目架构设计
-- ✅ 技术文档编写
-- 🔄 后端核心功能开发
-- ⏳ 前端界面开发
-- ⏳ API集成测试
-- ⏳ 用户界面优化
-- ⏳ 性能优化
-- ⏳ 文档完善
-- ⏳ 开源发布准备
+- ✅ Project Architecture Design
+- ✅ Technical Documentation
+- 🔄 Backend Core Development
+- ⏳ Frontend Interface Development
+- ⏳ API Integration Testing
+- ⏳ UI Optimization
+- ⏳ Performance Optimization
+- ⏳ Documentation Polish
+- ⏳ Open Source Preparation
 
-## 🤝 贡献指南
+## 🤝 Contributing
 
-我们欢迎社区贡献！请查看 [CONTRIBUTING.md](CONTRIBUTING.md) 了解如何参与项目开发。
+We welcome community contributions! Please check [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-### 开发环境设置
+### Development Setup
 
-1. Fork项目仓库
-2. 创建功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 创建Pull Request
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add some amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Create Pull Request
 
-## 📝 文档
+## 📝 Documentation
 
-- [开发计划](docs/development_plan.md) - 详细的开发计划和里程碑
-- [技术架构](docs/technical_architecture.md) - 系统架构和技术细节
-- [产品需求](docs/product_requirements.md) - 功能需求和UI设计
-- [API文档](docs/api_reference.md) - API接口文档
-- [用户指南](docs/user_guide.md) - 详细使用教程
+- [Development Plan](docs/development_plan.md)
+- [Technical Architecture](docs/technical_architecture.md)
+- [Product Requirements](docs/product_requirements.md)
+- [API Reference](docs/api_reference.md)
+- [User Guide](docs/user_guide.md)
 
-## 🐛 问题反馈
+## 🐛 Issues
 
-如果您在使用过程中遇到问题，请通过以下方式反馈：
+If you encounter any problems, please report them via:
 
-- 📧 发送邮件至: support@example.com
-- 💬 加入我们的 [Discord社区](https://discord.gg/example)
-- 🐙 在 [GitHub Issues](https://github.com/your-username/ai-image-video-generator/issues) 提交问题
-- 📖 查看 [FAQ文档](docs/faq.md)
+- 📧 Email: support@example.com
+- 💬 [Discord Community](https://discord.gg/example)
+- 🐙 [GitHub Issues](https://github.com/XucroYuri/Script2Image-Video/issues)
+- 📖 [FAQ](docs/faq.md)
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 致谢
+## 🙏 Acknowledgments
 
-- [Google AI](https://ai.google/) - 提供Gemini和Veo API
-- [React](https://reactjs.org/) - 前端框架
-- [FastAPI](https://fastapi.tiangolo.com/) - 后端框架
-- [Vite](https://vitejs.dev/) - 构建工具
-- [Tailwind CSS](https://tailwindcss.com/) - 样式框架
+- [Google AI](https://ai.google/) - Gemini and Veo APIs
+- [React](https://reactjs.org/) - Frontend Framework
+- [FastAPI](https://fastapi.tiangolo.com/) - Backend Framework
+- [Vite](https://vitejs.dev/) - Build Tool
+- [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
 
-## 📞 联系我们
+## 📞 Contact
 
-- 💼 项目主页: [https://github.com/your-username/ai-image-video-generator](https://github.com/your-username/ai-image-video-generator)
-- 📧 邮箱: contact@example.com
-- 🐦 Twitter: [@AIContentGen](https://twitter.com/AIContentGen)
-- 💼 LinkedIn: [AI Content Generator](https://linkedin.com/company/ai-content-generator)
+- 💼 Homepage: [https://github.com/XucroYuri/Script2Image-Video](https://github.com/XucroYuri/Script2Image-Video)
 
 ---
 
-⭐ 如果这个项目对您有帮助，请给我们一个星标！
+⭐ Star us on GitHub if this project helps you!
 
 **Made with ❤️ by the AI Image Video Generator Team**
+
+---
+
+## 📜 Special Declaration
+
+**The demo script in this project (located in `input/Visual_Development_Prompts_Nano_Veo.json`) is a creative work strictly based on authentic historical records:**
+
+- **2 Historical Letters from Japanese Soldiers**: Derived from letters displayed at the 2025 New Cultural Relics and Historical Materials Release Conference held by the Memorial Hall of the Victims in Nanjing Massacre by Japanese Invaders. These two letters nakedly reveal the atrocities committed by the Japanese army during the Nanjing Massacre from the perspective of the perpetrators themselves.
+- **"Investigation Record of the Military Tribunal for the Trial of War Criminals of the Ministry of National Defense regarding the Burying of Bodies by Tongshantang"**: Dated January 25, 1947, File No. 593/870, currently held by the Second Historical Archives of China.
+
+**Remember History, Cherish Peace:**
+
+We deeply mourn the 300,000 compatriots who were brutally slaughtered in the Nanjing Massacre. History cannot be tampered with, and the truth cannot be erased. We firmly oppose any actions that glorify wars of aggression or attempt to revive militarism.
+
+We express strong dissatisfaction, severe condemnation, and high vigilance regarding the Japanese side's long-standing refusal to acknowledge the facts of the Nanjing Massacre, their blatant tampering with history textbooks, their refusal to offer a sincere apology, as well as recent attempts to revise the Peace Constitution, break through the principle of "exclusively defense-oriented policy," and renew talk of military intervention in neighboring countries in a vain attempt to repeat aggression and expansion.
+
+Past experience, if not forgotten, is a guide for the future. Only by facing history squarely can we look forward to the future.
