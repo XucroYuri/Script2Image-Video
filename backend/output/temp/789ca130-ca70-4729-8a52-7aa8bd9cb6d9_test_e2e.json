@@ -1,0 +1,19 @@
+
+        {
+            "project": "E2E Test Project",
+            "scenes": [
+                {
+                    "scene_id": "scene-test",
+                    "shots": [
+                        {
+                            "shot_id": "shot-test",
+                            "description": "A test shot",
+                            "nano_banana_pro_prompts": {
+                                "start": "test prompt"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+        
