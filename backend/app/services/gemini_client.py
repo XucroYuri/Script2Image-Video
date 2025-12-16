@@ -8,7 +8,7 @@ class GeminiClient:
     
     def __init__(self):
         self.api_key = settings.GEMINI_API_KEY
-        self.base_url = "https://generativelanguage.googleapis.com/v1beta"
+        self.base_url = settings.GEMINI_BASE_URL
         self.model = settings.GEMINI_MODEL
         
     async def generate_image(self, prompt: str, **kwargs) -> bytes:

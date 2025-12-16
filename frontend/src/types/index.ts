@@ -34,6 +34,7 @@ export interface GeneratedFile {
     shot_id: string;
     file_type: 'image' | 'video';
     file_path: string;
+    file_url?: string;
     file_name: string;
     created_at: string;
     file_size: number;

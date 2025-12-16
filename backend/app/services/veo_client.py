@@ -8,7 +8,7 @@ class VeoClient:
     
     def __init__(self):
         self.api_key = settings.VEO_API_KEY
-        self.base_url = "https://api.veo.google.com/v1" # Hypothetical URL
+        self.base_url = settings.VEO_BASE_URL
         self.model = settings.VEO_MODEL
         
     async def generate_video(self, prompt: str, image_url: str = None, **kwargs) -> bytes:

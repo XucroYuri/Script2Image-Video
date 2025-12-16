@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from app.services.veo_client import VeoClient
 from app.services.file_storage import FileStorageService
 from app.models.schemas import GeneratedFile
+from app.core.config import settings
 import uuid
 import os
 
@@ -41,11 +42,15 @@ async def generate_video(request: VideoGenRequest):
         )
         
         # 3. Return Result
+        rel_path = os.path.relpath(file_path, settings.OUTPUT_DIR)
+        file_url = f"/files/{rel_path.replace(os.sep, '/')}"
+
         return GeneratedFile(
             file_id=str(uuid.uuid4()),
             shot_id=request.shot_id,
             file_type="video",
             file_path=file_path,
+            file_url=file_url,
             file_name=filename,
             file_size=os.path.getsize(file_path)
         )

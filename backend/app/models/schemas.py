@@ -49,6 +49,7 @@ class GeneratedFile(BaseModel):
     shot_id: str = Field(..., description="所属镜头ID")
     file_type: str = Field(..., description="文件类型(image/video)")
     file_path: str = Field(..., description="文件完整路径")
+    file_url: Optional[str] = Field(None, description="文件访问URL")
     file_name: str = Field(..., description="文件名")
     created_at: datetime = Field(default_factory=datetime.now)
     file_size: int = Field(..., description="文件大小(字节)")

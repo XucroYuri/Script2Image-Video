@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from app.core.config import settings
 from app.models.schemas import ProjectData
 from app.services.json_parser import JSONParserService
@@ -13,6 +14,12 @@ app = FastAPI(
     title=settings.PROJECT_NAME,
     openapi_url=f"{settings.API_V1_STR}/openapi.json"
 )
+
+# Ensure output directory exists
+os.makedirs(settings.OUTPUT_DIR, exist_ok=True)
+
+# Mount static files
+app.mount("/files", StaticFiles(directory=settings.OUTPUT_DIR), name="files")
 
 # 设置CORS
 app.add_middleware(
