@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scene, Shot } from '../types';
+import type { Scene, Shot } from '../types';
 import { Film, Image as ImageIcon, Video, Play, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 
 interface SceneListProps {

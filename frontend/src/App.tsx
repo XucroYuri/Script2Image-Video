@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { uploadJson, generateImage, generateVideo } from './services/api';
-import { ProjectData } from './types';
+import type { ProjectData } from './types';
 import FileUploader from './components/FileUploader';
 import SceneList from './components/SceneList';
 import { LayoutDashboard, Settings, History } from 'lucide-react';
