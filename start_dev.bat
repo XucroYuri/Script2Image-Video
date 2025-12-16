@@ -1,8 +1,9 @@
 @echo off
+chcp 65001 >nul
 setlocal
 
 echo ===================================================
-echo 🚀 Starting Script2Image-Video Development Environment
+echo Starting Script2Image-Video Development Environment
 echo ===================================================
 
 :: Backend
@@ -34,7 +35,7 @@ cd ..
 
 echo.
 echo ===================================================
-echo ✅ Services are launching in separate windows.
+echo Services are launching in separate windows.
 echo.
 echo    Backend:  http://localhost:8000
 echo    Frontend: http://localhost:5173
